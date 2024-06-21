@@ -29,7 +29,6 @@ India Insight React News Portal is a responsive React application that utilizes 
 
 ## Demo Video
 
-[![India Insight Demo Video](https://img.youtube.com/vi/b_5wFj_IqnU/0.jpg)](https://www.youtube.com/watch?v=b_5wFj_IqnU)
 
 ## Technologies Used
 
