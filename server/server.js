@@ -9,11 +9,34 @@ dotenv.config();
 
 const app = express();
 
+
 // Configure CORS to allow all origins and the GET method
 app.use(cors({
   origin: '*', // Allow all origins
   methods: ['GET'], // Allow only GET method
 }));
+
+app.get('/api/news', async (req, res) => {
+  const { country, category, page, pageSize } = req.query;
+  const apiKey = process.env.NEWS_API_KEY; // Ensure you set NEWS_API_KEY in your .env file
+
+  const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pageSize}`;
+  
+
+  try {
+    const response = await fetch(url)
+    res.json({
+      url:url,
+      articles: response.data.articles,
+      totalResults: response.data.totalResults,
+    });
+    return response;
+  } catch (error) {
+    console.error('Error fetching news:', error.message);
+    res.status(500).json({ error: 'Failed to fetch news' });
+  }
+});
+
 
 // Function to scrape Amazon product
 export async function scrapeAmazonProduct(url) {

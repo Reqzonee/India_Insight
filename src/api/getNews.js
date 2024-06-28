@@ -1,16 +1,26 @@
+import axios from 'axios';
+
 export const getNews = async (country, category, page, pageSize) => {
+  console.log("country is ", country);
   try {
-    const url_key = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${
-      `3e528274c195466daff3de2796b3850d`
-    }&page=${page}&pageSize=${pageSize}`;
-    let data = await fetch(url_key);
-    let finalData = await data.json();
-    // console.log(finalData);
+    const response = await axios.get(`http://localhost:3000/api/news`, {
+      params: {
+        country,
+        category,
+        page,
+        pageSize,
+      }
+    });
+
+    console.log("response ", response);
+
     return {
-      articles: finalData?.articles,
-      totalResults: finalData?.totalResults,
+      articles: response.data.articles,
+      totalResults: response.data.totalResults,
     };
   } catch (error) {
-    console.log(error);
+    console.error('Error fetching news:', error.message);
+    // Handle error gracefully
+    throw error; // or return an error object as needed
   }
 };

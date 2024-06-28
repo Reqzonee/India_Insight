@@ -10,7 +10,7 @@ const NewsList = ({ category, pageTitle }) => {
   const [country] = useCountry();
   const [news, setNews] = useState([]);
   const [page, setPage] = useState(1);
-  const [pageSize] = useState(20);
+  const [pageSize] = useState(10);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
