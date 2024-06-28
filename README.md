@@ -1,4 +1,4 @@
-# India Insight React News Portal
+# [India Insight React News Portal](https://india-insight.vercel.app/)
 Welcome to India Insight React News Portal! This application allows users to browse news articles fetched from a public API. Users can filter articles by categories, implement pagination for navigation, and view detailed article information.
 ## Table of Contents
 
