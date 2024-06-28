@@ -167,17 +167,18 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className="w-[800px] mx-auto mt-2 text-black flex justify-between items-center">
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            to={link.to}
-            className="text-white border-2 border-gray-700 rounded-md font-semibold text-[12px] p-1 px-3 uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
+      <div className="hidden md:flex w-[800px] mx-auto mt-2 text-black justify-between items-center">
+  {links.map((link, index) => (
+    <Link
+      key={index}
+      to={link.to}
+      className="text-white border-2 border-gray-700 rounded-md font-semibold text-[12px] p-1 px-3 uppercase hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
+    >
+      {link.label}
+    </Link>
+  ))}
+</div>
+
     </div>
   );
 };

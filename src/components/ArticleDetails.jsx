@@ -64,6 +64,9 @@ const ArticleDetails = () => {
             ))}
           </div>
           <div className="text-lg mb-4">
+            {formatDescription(newsDetails.description1)}
+          </div>
+          <div className="text-lg mb-4">
             {formatDescription(newsDetails.description2)}
           </div>
         </div>
